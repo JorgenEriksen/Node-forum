@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<base href="/" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width initial-scale=1.0 shrink-to-fit"
+		/>
+		<title>Forum</title>
+
+		<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+
+		<!-- Font Awesome icons (free version)-->
+		<script
+			src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- Google fonts-->
+		<link
+			href="https://fonts.googleapis.com/css?family=Varela+Round"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+			rel="stylesheet"
+		/>
+
+		<script>
+			window.ShadyDOM = {
+				force: true,
+			};
+			if (window.customElements) customElements.forcePolyfill = true;
+
+			window.process = {
+				env: {
+					NODE_ENV: "production",
+				},
+			};
+
+			/*
+			 * [polymer-root-path]
+			 *
+			 * Leave this line unchanged if you intend to serve your app from the root
+			 * path (e.g., with URLs like `my.domain/` and `my.domain/view1`).
+			 *
+			 * If you intend to serve your app from a non-root path (e.g., with URLs
+			 * like `my.domain/my-app/` and `my.domain/my-app/view1`), edit this line
+			 * to indicate the path from which you'll be serving, including leading
+			 * and trailing slashes (e.g., `/my-app/`).
+			 */
+			window.MyAppGlobals = {
+				rootPath: "/",
+				serverURL: "http://localhost:8081/",
+			};
+		</script>
+
+		<!-- Routing -->
+		<script type="module" src="./src/app.js"></script>
+
+		<link
+			rel="stylesheet"
+			href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+
+		<!-- Load webcomponents -->
+		<script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+
+		<!-- Import the main components -->
+		<script
+			type="module"
+			src="./src/nav-bar-component/nav-bar-component.js"
+		></script>
+
+		<script
+			type="module"
+			src="./src/footer-components/footer-component.js"
+		></script>
+
+		<script
+			type="module"
+			src="./src/landing-page-components/landing-page-component.js"
+		></script>
+		<script
+			type="module"
+			src="./src/landing-page-components/landing-login-component.js"
+		></script>
+		<script
+			type="module"
+			src="./src/landing-page-components/landing-register-component.js"
+		></script>
+
+		<script
+			type="module"
+			src="./src/forum-page-components/forum-landing-component.js"
+		></script>
+		<script
+			type="module"
+			src="./src/forum-page-components/forum-category-component.js"
+		></script>
+		<script
+			type="module"
+			src="./src/forum-page-components/forum-view-post-component.js"
+		></script>
+		<script
+			type="module"
+			src="./src/forum-page-components/forum-create-post-component.js"
+		></script>
+		<script
+			type="module"
+			src="./src/forum-page-components/forum-request-form-component.js"
+		></script>
+		<script
+			type="module"
+			src="./src/forum-page-components/forum-comment-component.js"
+		></script>
+
+		<script
+			type="module"
+			src="./src/profile-page-components/profile-page-component.js"
+		></script>
+		<script
+			type="module"
+			src="./src/adminmod-components/adminmod-page-component.js"
+		></script>
+
+		<script type="module" src="./src/not-found-component.js"></script>
+	</head>
+
+	<body>
+		<div id="outlet"></div>
+
+		<footer-component></footer-component>
+
+		<!-- <script
+			type="text/javascript"
+			src="./node_modules/jquery/dist/jquery.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="./node_modules/bootstrap/dist/js/bootstrap.min.js"
+		></script> -->
+	</body>
+</html>

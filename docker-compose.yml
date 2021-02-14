@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+  db:
+    image: mariadb:latest
+    command: --max_allowed_packet=1073741824 
+    environment:
+      MYSQL_DATABASE: prog2053-proj
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./dbInit:/docker-entrypoint-initdb.d:Z
+      - persistent:/var/lib/mysql
+    networks:
+        - default
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8082:80
+    environment:
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+      PMA_HOST: db
+    volumes:
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini:Z
+    networks:
+        - default
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.nodejs
+    image: nodejs
+    ports:
+      - 8081:8081
+    volumes:
+      - ./server:/server:Z
+    networks:
+      - default
+    links:
+      - db:db
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    ports:
+      - 8080:8080
+    volumes:
+      - ./client:/client:Z
+    networks:
+        - default
+
+volumes:
+  persistent:
