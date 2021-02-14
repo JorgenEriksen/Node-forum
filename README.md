@@ -1,11 +1,3 @@
-# Project - PROG2053
-
-## Group members:
-- Dennis Kristiansen <denniskr@stud.ntnu.no>
-- Salvador Bascunan <sobascun@stud.ntnu.no>
-- Jørgen Eriksen <jorgberi@stud.ntnu.no>
-- Elvis Arifagic <elvisa@stud.ntnu.no>
-
 ## Installation notes:
 - Install nodeJs
 - Run "npm i" in both the server and client folders of the project.
@@ -30,6 +22,3 @@ amanda/hello (user)
 - can not view post without logging in.
 - searching (both title and content of posts)
 - sorting by date or alphabetic. It is sorted by SQL primary key from posts as default.
-
-
-
